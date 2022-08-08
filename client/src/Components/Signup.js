@@ -52,14 +52,14 @@ const[person, setPerson] = useState({
                   <button type='submit' className='border-solid border-2 border-black px-2 hover:bg-red-500 w-3/4'>Signup</button>
                   <Link to='../login' className='hover:text-red-500'>Already have an account?</Link>
                 </div>
-                {error?.length > 0 && (
-                <ul style={{ color: "red" }}>
-                  {error.map((error) => (
-                  <li className='ml-2 text-red-400' key={error}>{error}</li>
-                  ))}
-              </ul>
-            )}
             </div>
+            {error?.length > 0 && (
+              <ul style={{ color: "red" }}>
+                {error.map((error) => (
+                <li className='ml-2 text-red-400' key={error}>{error}</li>
+                ))}
+            </ul>
+          )}
             </div>
         </form>
     </div>
