@@ -1,16 +1,33 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 
 function Signup() {
+const[person, setPerson] = useState({
+  last_name:"", 
+  first_name:"",
+  email:"",
+  password: "",
+  password_confirmation:""
+})
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setPerson({
+      ...person,
+      [name]: value,
+    });
+  }
+
+
   return (
     <div>
         <form className='h-screen flex justify-center items-center'>
             <div className='flex flex-col justify-around h-2/5 w-1/2'>
-            <input type='first-name' placeholder='First-name...' className='placeholder:text-sm placeholder:text-black pl-1 outline-none border-black border-2 bg-transparent'/>   
-            <input type='last-name' placeholder='Last-name...' className='placeholder:text-sm placeholder:text-black pl-1 outline-none border-black border-2 bg-transparent'/>         
-            <input type='email' placeholder='Email...' className='placeholder:text-sm placeholder:text-black pl-1 outline-none border-black border-2 bg-transparent'/>      
-            <input type='password' placeholder='Password...' className='placeholder:text-sm placeholder:text-black pl-1 outline-none border-black border-2 bg-transparent'/>
-            <input type='Confirm password' placeholder='Confirm Password...' className='placeholder:text-sm placeholder:text-black pl-1 outline-none border-black border-2 bg-transparent'/>
+            <input onChange={handleChange} value= {person.first_name} name='first_name' type='first-name' placeholder='First-name...' className='placeholder:text-xs placeholder:text-black pl-1 outline-none border-black border-2 bg-transparent'/>   
+            <input onChange={handleChange} value= {person.last_name} name='last_name' type='last-name' placeholder='Last-name...' className='placeholder:text-xs placeholder:text-black pl-1 outline-none border-black border-2 bg-transparent'/>         
+            <input onChange={handleChange} value= {person.email} name='email'type='email' placeholder='Email...' className='placeholder:text-xs placeholder:text-black pl-1 outline-none border-black border-2 bg-transparent'/>      
+            <input onChange={handleChange} value= {person.password} name='password' type='password' placeholder='Password...' className='placeholder:text-xs placeholder:text-black pl-1 outline-none border-black border-2 bg-transparent'/>
+            <input onChange={handleChange} value= {person.password_confirmation} name='password_confirmation'type='Confirm password' placeholder='Confirm Password...' className='placeholder:text-xs placeholder:text-black pl-1 outline-none border-black border-2 bg-transparent'/>
             <div className='flex justify-end'>
                 <div className='flex flex-col items-end'>
                   <button className='border-solid border-2 border-black px-2 hover:bg-red-500 w-3/4'>Signup</button>
