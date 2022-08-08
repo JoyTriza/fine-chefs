@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Login() {
   return (
@@ -9,6 +10,7 @@ function Login() {
           <input type='password' placeholder='Password...' className='outline-none border-black border-2 bg-transparent'/>
           <div className='flex justify-end'>
             <button className='border-solid border-2 px-2 hover:text-red-500'>Log In</button>
+            <Link to='../signup'>Sign up for Fine-Chef's?</Link>
           </div>
         </div>
       </form>

@@ -15,8 +15,6 @@ function App() {
       <Route path="quote" element={<Quote />} />
       <Route path="signup" element={<Signup />} />
       <Route path="dashboard" element={<Dashboard />} />
-
-
     </Routes>
   )
 }
