@@ -4,11 +4,17 @@ import {Routes, Route} from "react-router-dom";
 import Quote from "./Components/Home/Quote";
 import Signup from "./Components/Signup";
 import Dashboard from "./Components/Dashboard/Dashboard";
+import {Recipe} from "./Components/Helper/context"
+import { useState } from "react";
 
 
 function App() {
+  const [currentUser, setCurrentUser] = useState('')
+
+  
 
   return (
+    <Recipe.Provider value={{currentUser, setCurrentUser}}>
     <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="login" element={<Login />} />
@@ -16,6 +22,7 @@ function App() {
       <Route path="signup" element={<Signup />} />
       <Route path="dashboard" element={<Dashboard />} />
     </Routes>
+    </Recipe.Provider>
   )
 }
 

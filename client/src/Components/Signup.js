@@ -1,8 +1,11 @@
-import React, {useState} from 'react'
-import { Link } from 'react-router-dom'
+import React, {useState, useContext} from 'react'
+import { Link, Navigate } from 'react-router-dom'
+import { Recipe } from './Helper/context';
 
 function Signup() {
 const [error, setError] = useState([]);
+const {setCurrentUser, currentUser
+} = useContext(Recipe)
 const[person, setPerson] = useState({
   last_name:"", 
   first_name:"",
@@ -30,12 +33,14 @@ const[person, setPerson] = useState({
     })
       .then(res => {
       if(res.ok){
-        res.json().then(person => console.log(person))
+        res.json().then(person => setCurrentUser(person))
       } else {
         res.json().then(e => setError(Object.entries(e.error).flat()))
       }
     })
   }
+
+  if (currentUser) return <Navigate to='../dashboard' replace={true}/>;
 
 
   return (
