@@ -8,8 +8,14 @@ function Dashboard() {
   if (!currentUser) return <Login/>;
 
   return (
-    <div>
 
+    <div className='image h-screen w-screen bg-cover bg-no-repeat flex flex-col justify-between'>
+      <div className='text-3xl py-12 text-red-900 text-center'>
+        <h1>FOOD RECIPEs</h1>
+        </div>
+        
+
+      
     </div>
   )
 }
