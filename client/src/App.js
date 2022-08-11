@@ -6,7 +6,7 @@ import Signup from "./Components/Signup";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import {Recipe} from "./Components/Helper/context"
 import { useState } from "react";
-
+import Recipes from "./Components/Dashboard/Recipes";
 
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
       <Route path="quote" element={<Quote />} />
       <Route path="signup" element={<Signup />} />
       <Route path="dashboard" element={<Dashboard />} />
+      <Route path="recipes" element={<Recipes/>}/>
     </Routes>
     </Recipe.Provider>
   )
