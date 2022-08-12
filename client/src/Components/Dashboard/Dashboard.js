@@ -32,6 +32,13 @@ function Dashboard() {
     })
   }
  
+  function deleteRecipe(id) {
+        fetch(`/recipes/${id}`, {
+            method: 'DELETE'
+        })
+        const remaining_recipes = recipes.filter((recipe)=>recipe.id !== id)
+        setRecipes(remaining_recipes)
+    }
 
   const handleImageChange = (e) => {
     if(!e.target.files) return
@@ -111,7 +118,8 @@ function Dashboard() {
           </div>
 
           <div className='col-span-8'>
-            <Recipes recipes={recipes}/>
+            <Recipes recipes={recipes} deleteRecipe={deleteRecipe}/>
+            
           </div>
         </div>
     </div>
