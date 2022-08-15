@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react'
 import { Recipe } from '../Helper/context';
-import Login from '../Home/Login';
+// import Login from '../Home/Login';
 import Recipes from './Recipes';
 import { storage } from '../../Firebase/firebase'
 
@@ -93,7 +93,7 @@ function Dashboard() {
   }
 
 
-  if (!currentUser) return <Login/>;
+  // if (!currentUser) return <Login/>;
 
   return (
 
@@ -118,8 +118,7 @@ function Dashboard() {
           </div>
 
           <div className='col-span-8'>
-            <Recipes recipes={recipes} deleteRecipe={deleteRecipe}/>
-            
+            <Recipes recipes={recipes} deleteRecipe={deleteRecipe}/>            
           </div>
         </div>
     </div>

@@ -6,7 +6,7 @@ const Recipes = ({recipes, deleteRecipe}) => {
     <div className='grid grid-cols-2 gap-10'>
         {
             recipes.length > 0 ? (recipes.map((recipe)=>(
-                <div key={recipe.id} className='mt-4 bg-red-400 items-center border rounded'>
+                <div key={recipe.id} className='mt-4 bg-white/30 backdrop-blur items-center border rounded'>
                     <h4 className='text-xl text-center py-2'>{recipe.title}</h4>
                     <img src={recipe.image_url} alt={recipe.title} className='w-full h-2/3' />
                     <p className='px-4 my-3 text-lg'>{recipe.instructions}</p>
@@ -23,6 +23,4 @@ const Recipes = ({recipes, deleteRecipe}) => {
 }
 
 export default Recipes
-
-
 
